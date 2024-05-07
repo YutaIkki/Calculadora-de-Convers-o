@@ -46,7 +46,23 @@ while True:
 
     elif opção == "3":
         hexa = input("Insira um número Hexadecimal: ")
-        dec = int(hexa, 16)
+        l = len(hexa)
+        dec = 0
+        for i in hexa:
+            l = l - 1
+            if i == "a" or i == "A":
+                i = "10"
+            elif i == "b" or i == "B":
+                i = "11"
+            elif i == "c" or i == "C":
+                i = "12"
+            elif i == "d" or i == "D":
+                i = "13"
+            elif i == "e" or i == "E":
+                i = "14"
+            elif i == "f" or i == "F":
+                i="15"    
+            dec = dec + int(i)*16**l
         print('=='*30) 
         print(f"{hexa}[16] é {dec}[10]")
         print('--'*30) 
